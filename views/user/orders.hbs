@@ -1,0 +1,68 @@
+<div class="container my-5">
+  <h2 class="mb-4 fw-bold text-primary">📦 My Orders</h2>
+
+  {{#if orders.length}}
+    {{#each orders}}
+      <div class="card shadow-sm mb-4 border-0 rounded-3">
+        <div class="card-body">
+          <div class="row align-items-center">
+            
+            <!-- Product Image -->
+            <div class="col-md-2 text-center">
+              <img src="/product-images/{{this.products.[0]._id}}.jpg" 
+                   class="img-fluid rounded" 
+                   alt="{{this.products.[0].Name}}" 
+                   style="max-height: 120px;">
+            </div>
+
+            <!-- Order Info -->
+            <div class="col-md-7">
+              <h5 class="fw-bold">{{this.products.[0].Name}}</h5>
+              <p class="mb-1 text-muted">₹{{this.totalAmount}}</p>
+
+              <p class="mb-1">
+                <b>Status:</b>
+                {{#if (eq this.status "Placed")}}
+                  <span class="badge bg-success">{{this.status}}</span>
+                {{else if (eq this.status "Pending")}}
+                  <span class="badge bg-warning text-dark">{{this.status}}</span>
+                {{else}}
+                  <span class="badge bg-secondary">{{this.status}}</span>
+                {{/if}}
+              </p>
+
+              <p class="mb-0 text-muted">Ordered on: {{formatDate this.date}}</p>
+            </div>
+
+            <!-- Order Details Button -->
+            <div class="col-md-3 text-end">
+              <a href="/orders/{{this._id}}" class="btn btn-outline-primary btn-sm rounded-pill">
+                View Details
+              </a>
+            </div>
+          </div>
+
+          <!-- If multiple products in the order -->
+          {{#if (gt this.products.length 1)}}
+            <hr>
+            <div class="row">
+              {{#each this.products}}
+                <div class="col-md-3 text-center mb-2">
+                  <img src="/product-images/{{this._id}}.jpg" class="img-fluid rounded" alt="{{this.Name}}" style="max-height: 100px;">
+                  <p class="small fw-bold mt-2">{{this.Name}}</p>
+                  <p class="small text-muted">Qty: {{this.quantity}}</p>
+                </div>
+              {{/each}}
+            </div>
+          {{/if}}
+
+        </div>
+      </div>
+    {{/each}}
+  {{else}}
+    <div class="text-center p-5">
+      <h4 class="text-muted">😕 No orders yet</h4>
+      <a href="/" class="btn btn-primary mt-3">Shop Now</a>
+    </div>
+  {{/if}}
+</div>

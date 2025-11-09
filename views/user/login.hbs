@@ -1,0 +1,49 @@
+<link rel="stylesheet" href="/stylesheets/style.css">
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+  <div class="card p-4 shadow rounded-4" style="max-width: 400px; width: 100%; background-color: #fff;">
+    <h4 class="text-center mb-4">Login</h4>
+
+    <form action="/login" method="POST">
+      <!-- Email input -->
+      <div class="form-floating mb-4">
+        <input type="email" id="email" name="email" class="form-control" placeholder="Email" required>
+        <label for="email">Email address</label>
+      </div>
+
+      <!-- Password input -->
+      <div class="form-floating mb-4">
+        <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
+        <label for="password">Password</label>
+      </div>
+      {{#if loginErr}}
+<div> 
+  <p class="error" style="color: red;">{{loginErr}}</p>
+</div>
+{{/if}}
+      <!-- Remember me and forgot password -->
+      <div class="row mb-3">
+        
+        <div class="col text-end">
+          <a href="#">Forgot password?</a>
+        </div>
+      </div>
+
+      <!-- Submit button -->
+      <div class="d-grid mb-4">
+        <button type="submit" class="btn btn-primary"  >Login</button>
+      </div>
+
+      <!-- Register + social -->
+      <div class="text-center">
+        <p class="mb-2">Not a member? <a href="/signup">Register</a></p>
+        <p>or sign in with:</p>
+        <div class="d-flex justify-content-center gap-3">
+          <button type="button" class="btn btn-outline-dark btn-sm rounded-circle"><i class="fab fa-facebook-f"></i></button>
+          <button type="button" class="btn btn-outline-dark btn-sm rounded-circle"><i class="fab fa-google"></i></button>
+          <button type="button" class="btn btn-outline-dark btn-sm rounded-circle"><i class="fab fa-twitter"></i></button>
+          <button type="button" class="btn btn-outline-dark btn-sm rounded-circle"><i class="fab fa-github"></i></button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

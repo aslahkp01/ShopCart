@@ -1,0 +1,44 @@
+<section class="py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8 col-lg-6">
+        <h2 class="text-center mb-4">Edit Product</h2>
+
+        <form action="/admin/edit-product/{{product._id}}" method="POST" enctype="multipart/form-data">
+          <div class="mb-3">
+            <label for="name" class="form-label">Product Name</label>
+            <input type="text" class="form-control" name="Name" id="name" placeholder="Enter product name" value="{{product.Name}}" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="category" class="form-label">Category</label>
+            <input type="text" class="form-control" name="Category" id="category" placeholder="Enter product category"  value="{{product.Category}}"required>
+          </div>
+
+          <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <input type="text" class="form-control" name="Description" id="description" placeholder="Enter product description"  value="{{product.Description}}" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="price" class="form-label">Price</label>
+            <input type="text" step="0.01" class="form-control" name="Price" id="price" placeholder="Enter product price"  value="{{product.Price}}" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="image" class="form-label">Image</label>
+            <img src="/product-images/{{product._id}}.jpg" style="width: 100px; height:auto" id="imgView" class="pt-3 mb-3">
+            <input type="file" class="form-control" name="Image" id="image" onchange="viewImage(event)" >
+          </div>
+
+          <button type="submit" class="btn btn-success btn-sm">Update Product</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+  function viewImage(event){
+    document.getElementById('imgView').src=URL.createObjectURL(event.target.files[0])
+  }
+</script>

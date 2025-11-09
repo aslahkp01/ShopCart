@@ -1,0 +1,38 @@
+<section class="py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8 col-lg-6">
+        <h2 class="text-center mb-4">Add Product</h2>
+
+        <form action="/admin/add-products" method="POST" enctype="multipart/form-data">
+          <div class="mb-3">
+            <label for="name" class="form-label">Product Name</label>
+            <input type="text" class="form-control" name="Name" id="name" placeholder="Enter product name" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="category" class="form-label">Category</label>
+            <input type="text" class="form-control" name="Category" id="category" placeholder="Enter product category" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <input type="text" class="form-control" name="Description" id="description" placeholder="Enter product description" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="price" class="form-label">Price</label>
+            <input type="number" step="0.01" class="form-control" name="Price" id="price" placeholder="Enter product price" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="image" class="form-label">Image</label>
+            <input type="file" class="form-control" name="Image" id="image" required>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-sm">Add Product</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

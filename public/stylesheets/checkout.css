@@ -1,0 +1,14 @@
+.btn-gradient {
+      background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+      border: none;
+      color: white;
+      transition: 0.3s ease-in-out;
+    }
+    .btn-gradient:hover {
+      background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+    .form-control:focus {
+      box-shadow: 0 0 0 0.2rem rgba(0, 242, 254, 0.25);
+      border-color: #00f2fe;
+    }

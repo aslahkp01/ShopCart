@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="/stylesheets/profile.css">
+
+<section class="py-5 bg-light">
+  <div class="container d-flex justify-content-center">
+    <div class="card p-4 shadow rounded-4 border-0" style="max-width: 600px; width: 100%; background: white;">
+      <div class="d-flex flex-column flex-md-row align-items-center gap-4">
+
+        <!-- Profile Picture -->
+        <div class="text-center">
+          <img src="/images/aslah.jpg" alt="Profile" class="rounded-circle shadow-sm" width="130" height="130" style="object-fit: cover;">
+        </div>
+
+        <!-- User Info -->
+        <div class="w-100 justify-content-center">
+          <h4 class="fw-bold text-primary mb-1">{{user.name}}</h4>
+          <p class="mb-2 text-muted"><i class="bi bi-envelope-fill me-2"></i>{{user.email}}</p>
+          {{#if user.phone}}<p class="mb-2 text-muted"><i class="bi bi-telephone-fill me-2"></i>{{user.phone}}</p>{{/if}}
+          {{#if user.address}}<p class="mb-3 text-muted"><i class="bi bi-geo-alt-fill me-2"></i>{{user.address}}</p>{{/if}}
+
+          <a href="/edit-profile" class="btn btn-outline-primary btn-sm rounded-pill px-4">✏️ Edit Profile</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

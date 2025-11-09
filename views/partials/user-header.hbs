@@ -1,0 +1,100 @@
+<link rel="stylesheet" href="/stylesheets/style.css">
+<nav class="navbar navbar-expand-lg shadow-sm">
+
+  <div class="container-fluid">
+    <a class="navbar-brand fw-bold text-primary" href="/">🛒 ShopCart</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu"
+      aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarMenu">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link active" href="/">Products</a></li>
+      <li class="nav-item position-relative">
+  <a href="/cart" class="nav-link active d-flex align-items-center">
+     Cart
+    {{#if cartCount}}
+      <!-- Visible on md and up -->
+      <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger d-none d-md-inline">
+        {{cartCount}}
+      </span>
+
+      <!-- Visible on sm and below -->
+      <span class="badge bg-danger d-md-none ms-2">
+        {{cartCount}}
+      </span>
+    {{/if}}
+  </a>
+</li>
+
+
+
+        <li class="nav-item"><a class="nav-link active" href="/orders">Orders</a></li>
+      </ul>
+
+      <!-- Right Section -->
+      <div class="d-flex align-items-center gap-3 ms-auto">
+
+        <!-- Search bar (only if logged in) -->
+        {{#if user}}
+        <form class="d-flex" role="search"  >
+          <input class="form-control rounded-pill me-2" type="search" placeholder="Search" aria-label="Search" >
+          <button class="btn btn-outline-warning rounded-pill" type="submit">Search</button>
+    {{/if}}
+
+        
+
+        <!-- Account Dropdown -->
+        <div class="dropdown">
+          <button class="btn btn-light d-flex align-items-center gap-2 shadow-sm rounded-pill px-3 py-2 ms-2" type="button"
+            id="accountDropdown" data-bs-toggle="dropdown" aria-expanded="false" style="font-weight: 500;">
+            <i class="bi bi-person-circle fs-5 text-primary"></i>
+            {{#if user}}
+            <span class="text-dark">{{user.name}}</span>
+            <i class="bi bi-caret-down-fill text-muted ms-1"></i>
+            {{else}}
+            Account
+            {{/if}}
+          </button>
+
+          <ul class="dropdown-menu shadow rounded-4 mt-2 py-2 px-1" aria-labelledby="accountDropdown"
+            style="min-width: 200px;">
+            {{#if user}}
+            <li>
+              <a class="dropdown-item d-flex align-items-center gap-2 rounded-3 py-2 px-3" href="/profile">
+                <i class="bi bi-person text-primary"></i> Profile
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item d-flex align-items-center gap-2 rounded-3 py-2 px-3" href="/settings">
+                <i class="bi bi-gear text-secondary"></i> Settings
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider mx-3">
+            </li>
+            <li>
+              <a class="dropdown-item d-flex align-items-center gap-2 rounded-3 py-2 px-3 text-danger" href="/logout">
+                <i class="bi bi-box-arrow-right"></i> Logout
+              </a>
+            </li>
+            {{else}}
+            <li>
+              <a class="dropdown-item d-flex align-items-center gap-2 rounded-3 py-2 px-3 text-success" href="/login">
+                <i class="bi bi-box-arrow-in-right"></i> Login
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item d-flex align-items-center gap-2 rounded-3 py-2 px-3 text-primary" href="/signup">
+                <i class="bi bi-person-plus"></i> Sign Up
+              </a>
+            </li>
+            {{/if}}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+

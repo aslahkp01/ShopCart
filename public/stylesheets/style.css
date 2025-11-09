@@ -1,0 +1,131 @@
+.navbar {
+  background: #fefefe; /* subtle off-white for premium feel */
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* soft shadow for depth */
+  backdrop-filter: blur(8px); /* optional glassy effect */
+  transition: background 0.3s ease;
+}
+
+.navbar .nav-link {
+  color: #333; /* dark text for readability */
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.navbar .nav-link:hover {
+  color: #0d6efd; /* premium accent hover */
+}
+
+.navbar .navbar-brand {
+  color: #0d6efd; /* same as hero banner span */
+  font-weight: 700;
+}
+
+
+.navbar .btn-outline-warning {
+  color: #0d6efd;
+  border-color: #0d6efd;
+  transition: all 0.2s ease;
+}
+
+.navbar .btn-outline-warning:hover {
+  background-color: #0d6efd;
+  color: #fff;
+}
+
+
+  html {
+    scroll-behavior: smooth;
+}
+.margin{
+    margin-top: 3em;
+}
+
+.navbar.scrolled {
+    background: rgba(0, 0, 0, 0.85) !important; /* Dark background */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(1em);
+}
+body {
+  background-color: #f5f7fa;
+}
+
+/* Product card hover effect */
+.product-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* Product image overlay */
+.product-image {
+  transition: transform 0.3s ease;
+}
+.product-card:hover .product-image {
+  transform: scale(1.05);
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background: rgba(0,0,0,0.5);
+  transition: opacity 0.3s ease;
+}
+.product-card:hover .overlay {
+  opacity: 1;
+}
+.overlay .btn {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+/* Truncate long description */
+.text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Hero Banner */
+.hero-banner {
+  
+   background-image: url('../images/hero.png'); 
+   background-size: cover;      /* fill the section, cropping if needed */
+  background-position: center; /* align image center */
+  background-repeat: no-repeat; /* avoid tiling */
+  height: 100vh;               /* full screen height */
+  width: 100%; 
+}
+
+.hero-title {
+  font-size: 3rem;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  color: #555;
+}
+
+.hero-btn {
+  padding: 0.75rem 2rem;
+  font-size: 1.1rem;
+}
+
+/* Categories */
+.categories-section h2 {
+  font-size: 2.5rem;
+}
+
+
+.navbar .dropdown-menu {
+  z-index: 2000 !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border-radius: 0.75rem; /* optional, modern look */
+}
+.navbar, .container-fluid {
+  overflow: visible !important;
+}
